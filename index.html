@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahyu Setiawan | Engineering & Quality Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased relative">
+
+    <nav class="w-full fixed top-0 z-50 transition-all duration-300 glass">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-slate-900 tracking-tighter">Wahyu Setiawan<span class="text-blue-600">.</span></a>
+            <div class="flex items-center space-x-6">
+                <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-600 mr-4">
+                    <a href="#projects" class="hover:text-blue-600 transition" data-i18n="nav_projects">Karya Sistem</a>
+                    <a href="#blog" class="hover:text-blue-600 transition" data-i18n="nav_blog">Blog</a>
+                </div>
+                <select id="langSwitch" onchange="changeLanguage(this.value)" class="bg-slate-100 text-sm font-bold text-slate-700 py-2 px-4 rounded-lg cursor-pointer outline-none border border-slate-200 hover:bg-slate-200 transition shadow-sm">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="id">🇮🇩 Indonesia</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-40 pb-20 px-6 max-w-6xl mx-auto flex flex-col items-start justify-center border-b border-slate-200">
+        <div class="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 font-semibold tracking-wide text-sm mb-6 flex items-center gap-2">
+            <span>📍</span> <span data-i18n="hero_loc">Berbasis di Yokohama, Jepang</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight">Wahyu Setiawan.</h1>
+        <h2 class="text-2xl md:text-4xl font-bold text-slate-500 mb-6" data-i18n="hero_role">
+            Production & Electrical Engineer | Quality Management
+        </h2>
+        <p class="text-lg text-slate-600 max-w-3xl mb-10 leading-relaxed font-light" data-i18n="hero_desc">
+            Berhasil menerapkan keahlian teknik pada berbagai masalah praktis, mulai dari lantai pabrik manufaktur hingga solusi komunitas digital. Mahir merancang sistem operasional yang presisi, didukung oleh wawasan makro-ekonomi dan kepatuhan industri global.
+        </p>
+        <div class="flex gap-4 flex-wrap">
+            <a href="#projects" class="bg-blue-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition shadow-lg" data-i18n="btn_work">Lihat Sistem & Karya</a>
+            <a href="mailto:wahyusetiawan1402@gmail.com" class="bg-white border-2 border-slate-200 text-slate-700 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 transition" data-i18n="btn_b2b">Email & Kolaborasi</a>
+        </div>
+    </header>
+
+    <section class="py-10 bg-white px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest" data-i18n="sec_cert">Standar & Sertifikasi:</h3>
+            <div class="flex flex-wrap gap-4 md:gap-8 justify-center items-center opacity-80">
+                <div class="font-bold text-slate-700 flex items-center gap-2">🎖️ <span data-i18n="cert_1">ISO/TS 16949</span></div>
+                <div class="font-bold text-slate-700 flex items-center gap-2">🎖️ <span data-i18n="cert_2">JIS (Standar Jepang)</span></div>
+                <div class="font-bold text-slate-700 flex items-center gap-2">🎖️ <span data-i18n="cert_3">JLPT (Bahasa Jepang)</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-slate-50 border-t border-slate-200 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold mb-4 text-slate-900" data-i18n="sec_projects">Sistem & Aplikasi Global</h3>
+            <p class="text-slate-500 mb-12 max-w-2xl" data-i18n="proj_desc">Kumpulan solusi rekayasa dan perangkat lunak nyata yang saya arsiteki untuk menjawab tantangan industri dan kebutuhan komunitas.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-40 bg-blue-600 flex items-center justify-center text-5xl">📊</div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2" data-i18n="tag_ind">Manufaktur & Industri</span>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3" data-i18n="proj_1_title">Q-PORTAL (Quality Control)</h4>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed" data-i18n="proj_1_desc">Sistem Manajemen Kualitas (QMS) komprehensif untuk manufaktur, dilengkapi fitur integrasi QR Code Scanner, otomatisasi ekspor A3 Report, dan TV Signage Mode untuk pemantauan lantai produksi.</p>
+                        <a href="#" target="_blank" class="text-blue-600 text-sm font-semibold hover:underline" data-i18n="btn_detail">Detail Sistem →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-40 bg-emerald-600 flex items-center justify-center text-5xl">🕌</div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block mb-2" data-i18n="tag_com">Sistem Komunitas</span>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3" data-i18n="proj_2_title">Sistem Manajemen Masjid</h4>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed" data-i18n="proj_2_desc">Aplikasi operasional terpadu untuk manajemen kegiatan, optimalisasi efisiensi energi dan kelistrikan, serta inventarisasi fasilitas masjid secara digital.</p>
+                        <a href="#" target="_blank" class="text-emerald-600 text-sm font-semibold hover:underline" data-i18n="btn_detail">Detail Sistem →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-40 bg-indigo-600 flex items-center justify-center text-5xl">📚</div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block mb-2" data-i18n="tag_edu">Pendidikan & Literasi</span>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3" data-i18n="proj_3_title">RBM Japan Portal & Ruang Belajar</h4>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed" data-i18n="proj_3_desc">Ekosistem ruang belajar interaktif yang mengintegrasikan RBM Japan Portal khusus siswa untuk memfasilitasi kebutuhan fungsi akademik dan administratif secara terpusat.</p>
+                        <a href="#" target="_blank" class="text-indigo-600 text-sm font-semibold hover:underline" data-i18n="btn_detail">Detail Sistem →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-20 bg-slate-900 text-white px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
+            
+            <div class="md:w-1/3">
+                <h3 class="text-3xl font-bold mb-4" data-i18n="sec_blog">Ruang Blog & Karya</h3>
+                <p class="text-slate-400 mb-8 leading-relaxed" data-i18n="blog_desc">Kumpulan tulisan, esai, dan dokumentasi pemikiran saya mengenai perpaduan antara teknik kelistrikan, ekonomi syariah, dan efisiensi operasional.</p>
+                <a href="#" class="inline-block border border-slate-600 text-slate-300 px-6 py-3 rounded-lg hover:bg-slate-800 hover:text-white transition font-medium text-sm" data-i18n="btn_all_posts">Lihat Semua Tulisan</a>
+            </div>
+            
+            <div class="md:w-2/3 space-y-6" id="blog-container">
+                <p class="text-slate-500 italic animate-pulse" data-i18n="txt_loading">Memuat artikel terbaru dari server...</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 bg-white px-6 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold mb-4 text-slate-900 text-center" data-i18n="sec_meth">Metodologi & Kerangka Kerja Engineering</h3>
+            <p class="text-slate-500 mb-14 max-w-2xl mx-auto text-center" data-i18n="meth_desc">Pendekatan sistematis 4 langkah yang saya terapkan dalam menyelesaikan krisis produksi dan mengoptimalkan efisiensi.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                <div class="hidden md:block absolute top-10 left-10 right-10 h-0.5 bg-blue-100 z-0"></div>
+
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-4 border-4 border-white shadow-md">1</div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2" data-i18n="meth_1_title">Investigasi</h4>
+                    <p class="text-sm text-slate-500" data-i18n="meth_1_desc">Root Cause Analysis untuk anomali produk.</p>
+                </div>
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-4 border-4 border-white shadow-md">2</div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2" data-i18n="meth_2_title">Perancangan</h4>
+                    <p class="text-sm text-slate-500" data-i18n="meth_2_desc">Mendesain ulang sistem atau alur kerja.</p>
+                </div>
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-4 border-4 border-white shadow-md">3</div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2" data-i18n="meth_3_title">Eksekusi</h4>
+                    <p class="text-sm text-slate-500" data-i18n="meth_3_desc">Implementasi Kaizen dan solusi teknis.</p>
+                </div>
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mb-4 border-4 border-white shadow-md">4</div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2" data-i18n="meth_4_title">Pemantauan</h4>
+                    <p class="text-sm text-slate-500" data-i18n="meth_4_desc">Kontrol kualitas ketat berstandar JIS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 px-6 bg-slate-50 max-w-full">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold text-slate-900 mb-12 text-center" data-i18n="sec_exp">Sorotan Karir Profesional</h3>
+            
+            <div class="relative border-l-4 border-blue-200 pl-8 space-y-12 ml-4 md:ml-0">
+                <div class="relative">
+                    <div class="absolute -left-[42px] top-1 h-6 w-6 rounded-full bg-blue-600 border-4 border-white shadow"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <span class="text-sm font-bold text-blue-600 block mb-1" data-i18n="date_1">Agu 2024 - Sekarang | Yokohama, Jepang</span>
+                        <h4 class="text-2xl font-bold text-slate-800" data-i18n="job1_title">Production Engineer & Quality Control</h4>
+                        <p class="text-slate-500 mb-4 font-medium" data-i18n="comp_1">Tokyo Seimitsu Hatsujo</p>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2 text-sm">
+                            <li data-i18n="job1_p1">Melakukan inspeksi kualitas komponen presisi sesuai standar JIS.</li>
+                            <li data-i18n="job1_p2">Memimpin inisiatif Kaizen untuk menekan tingkat kecacatan produk.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[42px] top-1 h-6 w-6 rounded-full bg-slate-400 border-4 border-white shadow"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <span class="text-sm font-bold text-slate-500 block mb-1" data-i18n="date_2">Agu 2018 - Mei 2024 | Jepang</span>
+                        <h4 class="text-2xl font-bold text-slate-800" data-i18n="job2_title">Electrical Engineer</h4>
+                        <p class="text-slate-500 mb-4 font-medium" data-i18n="comp_2">Shinko Seisakusho</p>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2 text-sm">
+                            <li data-i18n="job2_p1">Merancang dan mengimplementasikan proyek Panel Listrik untuk Kapal Kargo.</li>
+                            <li data-i18n="job2_p2">Meningkatkan efisiensi operasional melalui pengujian perangkat elektronik.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-blue-50 border-t border-blue-100 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-blue-600 pl-4" data-i18n="sec_edu">Latar Belakang Pendidikan</h3>
+                <div class="space-y-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg" data-i18n="badge_ongoing">Sedang Berjalan</div>
+                        <h4 class="font-bold text-slate-800 text-lg" data-i18n="edu_s2_title">S2 Ekonomi Syariah</h4>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="edu_s2_desc">Fokus pada prinsip keuangan dan operasional bisnis Islam.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-slate-800 text-lg" data-i18n="edu_s1_arab_title">S1 Pendidikan Bahasa Arab</h4>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-slate-800 text-lg" data-i18n="edu_jp_title">Bunkyo University</h4>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="edu_jp_desc">Sastra & Bahasa Jepang (2012 - 2013)</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-slate-800 text-lg" data-i18n="edu_s1_elektro_title">Unisma Bekasi</h4>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="edu_s1_elektro_desc">S1 Teknik Elektro dan Elektronika</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-blue-600 pl-4" data-i18n="sec_skills">Kompetensi Inti</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
+                        <p class="font-bold text-slate-800">⚙️ <span data-i18n="skill_1">Electrical</span></p>
+                        <p class="text-xs text-slate-500 mt-1">Panel Wiring & PLC</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
+                        <p class="font-bold text-slate-800">✅ <span data-i18n="skill_2">QA System</span></p>
+                        <p class="text-xs text-slate-500 mt-1">JIS & ISO/TS</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
+                        <p class="font-bold text-slate-800">📈 <span data-i18n="skill_3">Kaizen</span></p>
+                        <p class="text-xs text-slate-500 mt-1" data-i18n="skill_3_desc">Process Improvement</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
+                        <p class="font-bold text-slate-800">🌐 <span data-i18n="skill_4">Bilingual +</span></p>
+                        <p class="text-xs text-slate-500 mt-1">JP, EN, ID</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <h3 class="text-xl font-bold mb-3 text-slate-900" data-i18n="sec_contact">Mari Terhubung</h3>
+                    <p class="text-slate-500 text-sm mb-6" data-i18n="contact_desc">Terbuka untuk diskusi proyek atau kolaborasi sistem.</p>
+                    <a href="mailto:wahyusetiawan1402@gmail.com" class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold transition">Email Saya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-500 text-center py-6 text-sm">
+        <p>&copy; 2026 Wahyu Setiawan. <span data-i18n="footer_text">Didesain untuk kualitas dan dampak.</span></p>
+    </footer>
+
+    <script>
+        // 1. DICTIONARY BAHASA
+        const translations = {
+            en: {
+                nav_projects: "Projects",
+                nav_blog: "Blog",
+                hero_loc: "Based in Yokohama, Japan",
+                hero_role: "Production & Electrical Engineer | Quality Management",
+                hero_desc: "Applying engineering expertise to practical issues, from manufacturing floors to digital community solutions. Skilled in designing precise operational systems supported by global compliance.",
+                btn_work: "View Systems & Works",
+                btn_b2b: "Email & Collaboration",
+                sec_cert: "Standards & Certifications:",
+                cert_1: "ISO/TS 16949",
+                cert_2: "JIS (Japanese Standards)",
+                cert_3: "JLPT (Japanese Language)",
+                sec_projects: "Global Systems & Applications",
+                proj_desc: "A collection of engineering solutions and applications I have built to address industry challenges and community needs.",
+                tag_ind: "Manufacturing & Industry",
+                proj_1_title: "Q-PORTAL (Quality Control)",
+                proj_1_desc: "A comprehensive Quality Management System (QMS) featuring QR Code Scanner integration, A3 Report export automation, and TV Signage Mode for production floor monitoring.",
+                btn_detail: "System Details →",
+                tag_com: "Community System",
+                proj_2_title: "Mosque Management System",
+                proj_2_desc: "An operational application for managing activities, energy/electrical efficiency optimization, and digital inventory of mosque facilities.",
+                tag_edu: "Education & Literacy",
+                proj_3_title: "RBM Japan Portal & Study Room",
+                proj_3_desc: "An interactive study space ecosystem integrating the RBM Japan Portal for students, facilitating academic and administrative functions centrally.",
+                sec_blog: "Blog & Writings",
+                blog_desc: "A collection of my writings, essays, and thoughts on the intersection of electrical engineering, Islamic economics, and operational efficiency.",
+                btn_all_posts: "View All Posts",
+                txt_loading: "Loading latest articles from server...",
+                sec_meth: "Engineering Methodology",
+                meth_desc: "A 4-step approach to resolving production crises.",
+                meth_1_title: "Investigate", meth_1_desc: "Root Cause Analysis for anomalies.",
+                meth_2_title: "Design", meth_2_desc: "Redesigning systems and workflows.",
+                meth_3_title: "Execute", meth_3_desc: "Implementing technical solutions.",
+                meth_4_title: "Monitor", meth_4_desc: "Strict quality control (JIS).",
+                sec_exp: "Career Highlights",
+                date_1: "Aug 2024 - Present | Yokohama, Japan",
+                job1_title: "Production Engineer & Quality Control",
+                comp_1: "Tokyo Seimitsu Hatsujo",
+                job1_p1: "Conducted rigorous quality inspections ensuring JIS compliance.",
+                job1_p2: "Led Kaizen initiatives to reduce product defect rates.",
+                date_2: "Aug 2018 - May 2024 | Japan",
+                job2_title: "Electrical Engineer",
+                comp_2: "Shinko Seisakusho",
+                job2_p1: "Delivered Electrical Panel projects for Cargo Ships.",
+                job2_p2: "Increased operational efficiency via electronic testing.",
+                sec_edu: "Educational Background",
+                badge_ongoing: "Ongoing",
+                edu_s2_title: "Master's in Islamic Economics",
+                edu_s2_desc: "Focusing on financial principles and operational management.",
+                edu_s1_arab_title: "Bachelor's in Arabic Education",
+                edu_jp_title: "Bunkyo University",
+                edu_jp_desc: "Japanese Language and Literature (2012 - 2013)",
+                edu_s1_elektro_title: "Unisma Bekasi",
+                edu_s1_elektro_desc: "Bachelor's Degree in Electrical Engineering",
+                sec_skills: "Core Competencies",
+                skill_1: "Electrical",
+                skill_2: "QA System",
+                skill_3: "Kaizen", skill_3_desc: "Process Improvement",
+                skill_4: "Bilingual +",
+                sec_contact: "Let's Connect",
+                contact_desc: "Open to discussing projects or system collaborations.",
+                footer_text: "Designed for quality and impact."
+            },
+            id: {
+                nav_projects: "Karya Sistem",
+                nav_blog: "Blog",
+                hero_loc: "Berbasis di Yokohama, Jepang",
+                hero_role: "Production & Electrical Engineer | Quality Management",
+                hero_desc: "Berhasil menerapkan keahlian teknik pada berbagai masalah praktis, mulai dari lantai pabrik manufaktur hingga solusi komunitas digital. Mahir merancang sistem operasional yang presisi, didukung oleh wawasan makro-ekonomi dan kepatuhan industri global.",
+                btn_work: "Lihat Sistem & Karya",
+                btn_b2b: "Email & Kolaborasi",
+                sec_cert: "Standar & Sertifikasi:",
+                cert_1: "ISO/TS 16949",
+                cert_2: "JIS (Standar Jepang)",
+                cert_3: "JLPT (Bahasa Jepang)",
+                sec_projects: "Sistem & Aplikasi Global",
+                proj_desc: "Kumpulan solusi rekayasa dan perangkat lunak nyata yang saya arsiteki untuk menjawab tantangan industri dan kebutuhan komunitas.",
+                tag_ind: "Manufaktur & Industri",
+                proj_1_title: "Q-PORTAL (Quality Control)",
+                proj_1_desc: "Sistem Manajemen Kualitas (QMS) komprehensif untuk manufaktur, dilengkapi fitur integrasi QR Code Scanner, otomatisasi ekspor A3 Report, dan TV Signage Mode untuk pemantauan lantai produksi.",
+                btn_detail: "Detail Sistem →",
+                tag_com: "Sistem Komunitas",
+                proj_2_title: "Sistem Manajemen Masjid",
+                proj_2_desc: "Aplikasi operasional terpadu untuk manajemen kegiatan, optimalisasi efisiensi energi dan kelistrikan, serta inventarisasi fasilitas masjid secara digital.",
+                tag_edu: "Pendidikan & Literasi",
+                proj_3_title: "RBM Japan Portal & Ruang Belajar",
+                proj_3_desc: "Ekosistem ruang belajar interaktif yang mengintegrasikan RBM Japan Portal khusus siswa untuk memfasilitasi kebutuhan fungsi akademik dan administratif secara terpusat.",
+                sec_blog: "Ruang Blog & Karya",
+                blog_desc: "Kumpulan tulisan, esai, dan dokumentasi pemikiran saya mengenai perpaduan antara teknik kelistrikan, ekonomi syariah, dan efisiensi operasional.",
+                btn_all_posts: "Lihat Semua Tulisan",
+                txt_loading: "Memuat artikel terbaru dari server...",
+                sec_meth: "Metodologi & Kerangka Kerja Engineering",
+                meth_desc: "Pendekatan sistematis 4 langkah yang saya terapkan dalam menyelesaikan krisis produksi dan mengoptimalkan efisiensi.",
+                meth_1_title: "Investigasi", meth_1_desc: "Root Cause Analysis untuk anomali produk.",
+                meth_2_title: "Perancangan", meth_2_desc: "Mendesain ulang sistem atau alur kerja.",
+                meth_3_title: "Eksekusi", meth_3_desc: "Implementasi Kaizen dan solusi teknis.",
+                meth_4_title: "Pemantauan", meth_4_desc: "Kontrol kualitas ketat berstandar JIS.",
+                sec_exp: "Sorotan Karir Profesional",
+                date_1: "Agu 2024 - Sekarang | Yokohama, Jepang",
+                job1_title: "Production Engineer & Quality Control",
+                comp_1: "Tokyo Seimitsu Hatsujo",
+                job1_p1: "Melakukan inspeksi kualitas komponen presisi sesuai standar JIS.",
+                job1_p2: "Memimpin inisiatif Kaizen untuk menekan tingkat kecacatan produk.",
+                date_2: "Agu 2018 - Mei 2024 | Jepang",
+                job2_title: "Electrical Engineer",
+                comp_2: "Shinko Seisakusho",
+                job2_p1: "Merancang dan mengimplementasikan proyek Panel Listrik untuk Kapal Kargo.",
+                job2_p2: "Meningkatkan efisiensi operasional melalui pengujian perangkat elektronik.",
+                sec_edu: "Latar Belakang Pendidikan",
+                badge_ongoing: "Sedang Berjalan",
+                edu_s2_title: "S2 Ekonomi Syariah",
+                edu_s2_desc: "Fokus pada prinsip keuangan dan operasional bisnis Islam.",
+                edu_s1_arab_title: "S1 Pendidikan Bahasa Arab",
+                edu_jp_title: "Bunkyo University",
+                edu_jp_desc: "Sastra & Bahasa Jepang (2012 - 2013)",
+                edu_s1_elektro_title: "Unisma Bekasi",
+                edu_s1_elektro_desc: "S1 Teknik Elektro dan Elektronika",
+                sec_skills: "Kompetensi Inti",
+                skill_1: "Electrical",
+                skill_2: "QA System",
+                skill_3: "Kaizen", skill_3_desc: "Peningkatan Proses",
+                skill_4: "Bilingual +",
+                sec_contact: "Mari Terhubung",
+                contact_desc: "Terbuka untuk diskusi proyek atau kolaborasi sistem.",
+                footer_text: "Didesain untuk kualitas dan dampak."
+            },
+            ja: {
+                nav_projects: "プロジェクト",
+                nav_blog: "ブログ",
+                hero_loc: "神奈川県横浜市在住",
+                hero_role: "生産・電気エンジニア | 品質管理",
+                hero_desc: "製造現場からデジタルコミュニティのソリューションまで、実践的な問題にエンジニアリングの専門知識を応用。グローバルなコンプライアンスに裏付けられた、正確な運用システムの設計に熟練。",
+                btn_work: "システムと実績を見る",
+                btn_b2b: "メール・コラボレーション",
+                sec_cert: "規格と認証:",
+                cert_1: "ISO/TS 16949",
+                cert_2: "JIS（日本産業規格）",
+                cert_3: "JLPT（日本語能力試験）",
+                sec_projects: "グローバルシステムとアプリケーション",
+                proj_desc: "業界の課題やコミュニティのニーズに対応するために構築したエンジニアリングソリューションとアプリケーションのコレクション。",
+                tag_ind: "製造と産業",
+                proj_1_title: "Q-PORTAL（品質管理）",
+                proj_1_desc: "QRコードスキャナー統合、A3レポートエクスポートの自動化、生産フロア監視用のTVサイネージモードを備えた包括的な品質管理システム（QMS）。",
+                btn_detail: "システム詳細 →",
+                tag_com: "コミュニティシステム",
+                proj_2_title: "モスク管理システム",
+                proj_2_desc: "活動の管理、エネルギー/電気効率の最適化、モスク施設のデジタル在庫管理のための運用アプリケーション。",
+                tag_edu: "教育とリテラシー",
+                proj_3_title: "RBM Japanポータルと学習室",
+                proj_3_desc: "学術的および管理的な機能を一元的に促進する、学生向けのRBM Japanポータルを統合したインタラクティブな学習スペースのエコシステム。",
+                sec_blog: "ブログと執筆",
+                blog_desc: "電気工学、イスラム経済学、運用効率の交差点に関する私の文章、エッセイ、考えのコレクション。",
+                btn_all_posts: "すべての記事を見る",
+                txt_loading: "サーバーから最新の記事を読み込んでいます...",
+                sec_meth: "方法論とフレームワーク",
+                meth_desc: "生産の危機を解決するための体系的な4段階のアプローチ。",
+                meth_1_title: "調査", meth_1_desc: "根本原因分析。",
+                meth_2_title: "設計", meth_2_desc: "システムの再設計。",
+                meth_3_title: "実行", meth_3_desc: "技術的解決策の実施。",
+                meth_4_title: "監視", meth_4_desc: "JISに準拠した厳格な品質管理。",
+                sec_exp: "主な職歴",
+                date_1: "2024年8月 - 現在 | 横浜、日本",
+                job1_title: "生産エンジニア、品質管理",
+                comp_1: "東京精密発條株式会社",
+                job1_p1: "精密部品の厳格な品質検査を実施し、JIS準拠を確保。",
+                job1_p2: "Kaizenイニシアチブを主導し、不良率を削減。",
+                date_2: "2018年8月 - 2024年5月 | 日本",
+                job2_title: "電気エンジニア",
+                comp_2: "株式会社シンコー",
+                job2_p1: "貨物船向けの電気パネルプロジェクトを納品。",
+                job2_p2: "電子テストを通じて運用効率を向上。",
+                sec_edu: "学歴",
+                badge_ongoing: "在学中",
+                edu_s2_title: "イスラム経済学 修士課程",
+                edu_s2_desc: "財務原則と運営管理に焦点を当てる。",
+                edu_s1_arab_title: "アラビア語教育学 学士",
+                edu_jp_title: "文教大学",
+                edu_jp_desc: "日本語・日本文学（2012 - 2013）",
+                edu_s1_elektro_title: "ウニスマ・ブカシ",
+                edu_s1_elektro_desc: "電気電子工学 学士",
+                sec_skills: "コアコンピテンシー",
+                skill_1: "電気工学",
+                skill_2: "品質システム",
+                skill_3: "Kaizen", skill_3_desc: "プロセス改善",
+                skill_4: "バイリンガル +",
+                sec_contact: "連絡先",
+                contact_desc: "プロジェクトやシステムのコラボレーションについてのご相談をお待ちしております。",
+                footer_text: "品質と影響のために設計されています。"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerText = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+        
+        // Inisialisasi Bahasa
+        changeLanguage('id');
+        document.getElementById('langSwitch').value = 'id';
+
+
+        // 2. SISTEM BLOG DARI GOOGLE SHEETS
+        // GANTI TULISAN DI BAWAH INI DENGAN LINK "PUBLISH TO WEB (CSV)" GOOGLE SHEETS ANDA
+        const googleSheetCSV = 'MASUKKAN_LINK_PUBLISH_TO_WEB_CSV_ANDA_DISINI';
+
+        async function fetchBlogPosts() {
+            const container = document.getElementById('blog-container');
+            
+            // Mode Placeholder jika Link Google Sheets belum diisi
+            if (googleSheetCSV === 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSMEhPgvSEuWjEBkqbWIU9GlyLJufK1KKVumSxn6-UgwJ2Z6zWCnDu9p9LJ3n6zZx8G-0YJ0FvmBTpE/pub?gid=0&single=true&output=csv') {
+                container.innerHTML = `
+                    <a href="#" class="block bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-blue-500 hover:bg-slate-800 transition group">
+                        <span class="text-blue-400 text-xs font-bold tracking-widest uppercase mb-2 block">SISTEM SIAP DIGUNAKAN</span>
+                        <h4 class="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition">Menunggu Koneksi Google Sheets</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Sistem Headless CMS telah aktif. Masukkan link CSV Google Sheets Anda pada kode HTML untuk memunculkan artikel secara otomatis.</p>
+                    </a>
+                `;
+                return;
+            }
+
+            try {
+                const response = await fetch(googleSheetCSV);
+                const data = await response.text();
+                
+                // Memisahkan baris data
+                const rows = data.split('\\n').slice(1); // Mulai dari baris ke-2 (mengabaikan Header)
+                let htmlContent = '';
+
+                rows.forEach(row => {
+                    // Pemisahan koma sederhana (Pastikan tidak ada tanda koma di dalam teks judul/deskripsi di spreadsheet Anda)
+                    const cols = row.split(','); 
+                    if (cols.length >= 4) {
+                        const kategori = cols[0].trim();
+                        const judul = cols[1].trim();
+                        const deskripsi = cols[2].trim();
+                        const link = cols[3].trim();
+
+                        htmlContent += `
+                            <a href="${link}" target="_blank" class="block bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-emerald-500 hover:bg-slate-800 transition group">
+                                <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-2 block">${kategori}</span>
+                                <h4 class="text-xl font-bold mb-2 text-white group-hover:text-emerald-400 transition">${judul}</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">${deskripsi}</p>
+                            </a>
+                        `;
+                    }
+                });
+
+                if (htmlContent !== '') {
+                    container.innerHTML = htmlContent;
+                } else {
+                    container.innerHTML = '<p class="text-slate-500">Belum ada tulisan.</p>';
+                }
+
+            } catch (error) {
+                console.error('Error fetching blog data:', error);
+                container.innerHTML = '<p class="text-red-400 text-sm">Gagal terhubung ke database. Pastikan link Google Sheets benar.</p>';
+            }
+        }
+
+        fetchBlogPosts();
+    </script>
+</body>
+</html>
