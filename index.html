@@ -72,7 +72,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div class="bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-500 group flex flex-col">
                     <div class="h-48 w-full overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Technology Circuit" class="object-cover w-full h-full group-hover:scale-110 transition duration-700 ease-in-out">
+                        <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=800" alt="Electronic Circuit Board" class="object-cover w-full h-full group-hover:scale-110 transition duration-700 ease-in-out">
                         <div class="absolute inset-0 bg-blue-900/20 group-hover:bg-blue-900/10 transition duration-500"></div>
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
@@ -85,7 +85,7 @@
 
                 <div class="bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-500 group flex flex-col">
                     <div class="h-48 w-full overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&q=80&w=800" alt="Islamic Geometric Architecture" class="object-cover w-full h-full group-hover:scale-110 transition duration-700 ease-in-out">
+                        <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&q=80&w=800" alt="Islamic Architecture Geometry" class="object-cover w-full h-full group-hover:scale-110 transition duration-700 ease-in-out">
                         <div class="absolute inset-0 bg-emerald-900/20 group-hover:bg-emerald-900/10 transition duration-500"></div>
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
@@ -98,7 +98,7 @@
 
                 <div class="bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-500 group flex flex-col">
                     <div class="h-48 w-full overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800" alt="Mount Fuji and Sakura Landscape" class="object-cover w-full h-full group-hover:scale-110 transition duration-700 ease-in-out">
+                        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?auto=format&fit=crop&q=80&w=800" alt="Pure Mount Fuji Landscape" class="object-cover w-full h-full group-hover:scale-110 transition duration-700 ease-in-out">
                         <div class="absolute inset-0 bg-indigo-900/20 group-hover:bg-indigo-900/10 transition duration-500"></div>
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
@@ -454,19 +454,16 @@
         // Link CSV Asli Anda
         const googleSheetCSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSMEhPgvSEuWjEBkqbWIU9GlyLJufK1KKVumSxn6-UgwJ2Z6zWCnDu9p9LJ3n6zZx8G-0YJ0FvmBTpE/pub?gid=0&single=true&output=csv';
 
-        // Fungsi Parser CSV sederhana untuk memisahkan data dengan koma, dengan penanganan dasar kutipan
+        // Fungsi Parser CSV sederhana untuk memisahkan data dengan koma
         function parseCSV(str) {
             const result = [];
-            let i = 0;
-            // Memisahkan baris
             const rows = str.split('\\n');
             for (let row of rows) {
                 if(row.trim() === '') continue;
-                // Regex memisahkan nilai berdasarkan koma, mengabaikan koma di dalam tanda kutip
                 const rowData = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(item => {
                     let val = item.trim();
                     if (val.startsWith('"') && val.endsWith('"')) {
-                        val = val.substring(1, val.length - 1); // Buang tanda kutip
+                        val = val.substring(1, val.length - 1); 
                     }
                     return val;
                 });
@@ -483,11 +480,10 @@
                 const data = await response.text();
                 
                 const parsedData = parseCSV(data);
-                const rows = parsedData.slice(1); // Mulai dari baris ke-2 (mengabaikan Header)
+                const rows = parsedData.slice(1); // Mengabaikan Header
                 let htmlContent = '';
 
                 rows.forEach(cols => {
-                    // Cek jika jumlah kolom sesuai yang diharapkan (minimal 4: Kategori, Judul, Deskripsi, Link)
                     if (cols.length >= 4 && cols[1] !== "") {
                         const kategori = cols[0] || 'UMUM';
                         const judul = cols[1];
@@ -520,7 +516,6 @@
             }
         }
 
-        // Jalankan fetch saat halaman selesai diload
         document.addEventListener('DOMContentLoaded', fetchBlogPosts);
     </script>
 </body>
