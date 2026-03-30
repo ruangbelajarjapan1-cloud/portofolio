@@ -10,10 +10,10 @@
         body { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .bg-grid { background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px); background-size: 30px 30px; }
+        .bg-grid-light { background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px); background-size: 30px 30px; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased relative bg-grid">
+<body class="bg-slate-50 text-slate-800 antialiased relative bg-grid-light">
 
     <nav class="w-full fixed top-0 z-50 transition-all duration-300 glass shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -32,39 +32,38 @@
         </div>
     </nav>
 
-    <header class="relative flex flex-col justify-center border-b border-slate-200/60 overflow-hidden min-h-[85vh] pt-20 bg-white">
+    <header class="relative flex flex-col justify-center border-b border-slate-800 overflow-hidden min-h-[85vh] pt-20 bg-slate-950">
         
-        <div class="absolute inset-0 z-0 opacity-40">
-            <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&q=80&w=2000" alt="White Abstract Geometry Texture" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-50"></div>
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+            <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-blue-600 opacity-20 blur-[100px]"></div>
         </div>
 
         <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pt-16 pb-12">
-            <div class="inline-block px-4 py-1.5 rounded-full bg-blue-50/80 backdrop-blur-sm border border-blue-200 text-blue-700 font-bold tracking-wide text-xs mb-8 flex items-center gap-2 shadow-sm w-max">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-300 font-bold tracking-wide text-xs mb-8 flex items-center gap-2 shadow-sm w-max backdrop-blur-md">
                 <span>📍</span> <span data-i18n="hero_loc">Berbasis di Yokohama, Jepang</span>
             </div>
             
-            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-tight">
                 Wahyu Setiawan.
             </h1>
             
-            <h2 class="text-2xl md:text-3xl font-semibold text-slate-600 mb-8 max-w-3xl" data-i18n="hero_role">
+            <h2 class="text-2xl md:text-3xl font-semibold text-slate-300 mb-8 max-w-3xl" data-i18n="hero_role">
                 Production & Electrical Engineer | Quality Management
             </h2>
             
-            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mb-12 leading-relaxed font-light backdrop-blur-sm bg-white/40 p-2 -ml-2 rounded-lg" data-i18n="hero_desc">
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed font-light" data-i18n="hero_desc">
                 Berhasil menerapkan keahlian teknik pada berbagai masalah praktis, mulai dari lantai pabrik manufaktur hingga solusi komunitas digital. Mahir merancang sistem operasional yang presisi, didukung oleh wawasan makro-ekonomi dan kepatuhan industri.
             </p>
             
             <div class="flex gap-4 flex-wrap">
-                <a href="#projects" class="bg-blue-700 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-800 transition shadow-lg hover:-translate-y-0.5" data-i18n="btn_work">Lihat Sistem & Karya</a>
-                <a href="mailto:wahyusetiawan1402@gmail.com" class="bg-white border border-slate-300 text-slate-700 px-8 py-3.5 rounded-lg font-semibold hover:bg-slate-50 transition shadow-sm hover:-translate-y-0.5" data-i18n="btn_b2b">Email & Kolaborasi</a>
+                <a href="#projects" class="bg-blue-600 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-500 transition shadow-lg hover:-translate-y-0.5" data-i18n="btn_work">Lihat Sistem & Karya</a>
+                <a href="mailto:wahyusetiawan1402@gmail.com" class="bg-transparent border border-slate-600 text-slate-300 px-8 py-3.5 rounded-lg font-semibold hover:bg-slate-800 hover:text-white transition shadow-sm hover:-translate-y-0.5" data-i18n="btn_b2b">Email & Kolaborasi</a>
             </div>
         </div>
     </header>
 
-    <section class="py-10 bg-white/80 px-6 backdrop-blur-md border-b border-slate-200/60 relative z-20">
+    <section class="py-10 bg-white px-6 border-b border-slate-200/60 relative z-20 shadow-sm">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest" data-i18n="sec_cert">Standar & Sertifikasi:</h3>
             <div class="flex flex-wrap gap-4 md:gap-8 justify-center items-center opacity-80">
@@ -127,13 +126,11 @@
 
     <section id="blog" class="py-24 bg-slate-900 text-white px-6">
         <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16">
-            
             <div class="lg:w-1/3">
                 <h3 class="text-3xl md:text-4xl font-extrabold mb-6 text-white" data-i18n="sec_blog">Ruang Tulis & Karya</h3>
                 <p class="text-slate-400 mb-10 leading-relaxed font-light text-lg" data-i18n="blog_desc">Dokumentasi pemikiran saya mengenai perpaduan antara teknik kelistrikan, manajemen kualitas, dan efisiensi operasional.</p>
                 <div class="w-20 h-1 bg-blue-500 mb-10 rounded-full"></div>
             </div>
-            
             <div class="lg:w-2/3 space-y-6" id="blog-container">
                 <div class="p-10 border border-slate-700 rounded-2xl flex items-center justify-center">
                     <p class="text-slate-400 font-medium animate-pulse flex items-center gap-3">
@@ -142,7 +139,6 @@
                     </p>
                 </div>
             </div>
-
         </div>
     </section>
 
