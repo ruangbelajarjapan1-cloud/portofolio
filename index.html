@@ -9,170 +9,189 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        /* Glassmorphism Navigation */
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        /* Subtle Grid Background for Elegance */
+        .bg-grid { background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px); background-size: 30px 30px; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased relative">
+<body class="bg-slate-50 text-slate-800 antialiased relative bg-grid">
 
-    <nav class="w-full fixed top-0 z-50 transition-all duration-300 glass">
+    <nav class="w-full fixed top-0 z-50 transition-all duration-300 glass shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-slate-900 tracking-tighter">Wahyu Setiawan<span class="text-blue-600">.</span></a>
+            <a href="#" class="text-xl font-extrabold text-slate-900 tracking-tighter">Wahyu<span class="text-blue-600">.</span></a>
             <div class="flex items-center space-x-6">
-                <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-600 mr-4">
+                <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600 mr-4">
                     <a href="#projects" class="hover:text-blue-600 transition" data-i18n="nav_projects">Karya Sistem</a>
-                    <a href="#blog" class="hover:text-blue-600 transition" data-i18n="nav_blog">Blog</a>
+                    <a href="#blog" class="hover:text-blue-600 transition" data-i18n="nav_blog">Ruang Tulis</a>
                 </div>
-                <select id="langSwitch" onchange="changeLanguage(this.value)" class="bg-slate-100 text-sm font-bold text-slate-700 py-2 px-4 rounded-lg cursor-pointer outline-none border border-slate-200 hover:bg-slate-200 transition shadow-sm">
-                    <option value="en">🇬🇧 English</option>
-                    <option value="id">🇮🇩 Indonesia</option>
-                    <option value="ja">🇯🇵 日本語</option>
+                <select id="langSwitch" onchange="changeLanguage(this.value)" class="bg-white text-sm font-bold text-slate-700 py-2 px-4 rounded-lg cursor-pointer outline-none border border-slate-200 hover:bg-slate-50 transition shadow-sm">
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="id">🇮🇩 ID</option>
+                    <option value="ja">🇯🇵 JA</option>
                 </select>
             </div>
         </div>
     </nav>
 
-    <header class="pt-40 pb-20 px-6 max-w-6xl mx-auto flex flex-col items-start justify-center border-b border-slate-200">
-        <div class="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 font-semibold tracking-wide text-sm mb-6 flex items-center gap-2">
+    <header class="pt-40 pb-24 px-6 max-w-6xl mx-auto flex flex-col items-start justify-center border-b border-slate-200/60 relative">
+        <div class="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 font-bold tracking-wide text-xs mb-8 flex items-center gap-2 shadow-sm">
             <span>📍</span> <span data-i18n="hero_loc">Berbasis di Yokohama, Jepang</span>
         </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight">Wahyu Setiawan.</h1>
-        <h2 class="text-2xl md:text-4xl font-bold text-slate-500 mb-6" data-i18n="hero_role">
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">Wahyu Setiawan.</h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-slate-500 mb-8" data-i18n="hero_role">
             Production & Electrical Engineer | Quality Management
         </h2>
-        <p class="text-lg text-slate-600 max-w-3xl mb-10 leading-relaxed font-light" data-i18n="hero_desc">
-            Berhasil menerapkan keahlian teknik pada berbagai masalah praktis, mulai dari lantai pabrik manufaktur hingga solusi komunitas digital. Mahir merancang sistem operasional yang presisi, didukung oleh wawasan makro-ekonomi dan kepatuhan industri global.
+        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mb-12 leading-relaxed font-light" data-i18n="hero_desc">
+            Berhasil menerapkan keahlian teknik pada berbagai masalah praktis, mulai dari lantai pabrik manufaktur hingga solusi komunitas digital. Mahir merancang sistem operasional yang presisi, didukung oleh wawasan makro-ekonomi dan kepatuhan industri.
         </p>
         <div class="flex gap-4 flex-wrap">
-            <a href="#projects" class="bg-blue-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition shadow-lg" data-i18n="btn_work">Lihat Sistem & Karya</a>
-            <a href="mailto:wahyusetiawan1402@gmail.com" class="bg-white border-2 border-slate-200 text-slate-700 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 transition" data-i18n="btn_b2b">Email & Kolaborasi</a>
+            <a href="#projects" class="bg-blue-700 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-800 transition shadow-lg hover:-translate-y-0.5" data-i18n="btn_work">Lihat Sistem & Karya</a>
+            <a href="mailto:wahyusetiawan1402@gmail.com" class="bg-white border border-slate-300 text-slate-700 px-8 py-3.5 rounded-lg font-semibold hover:bg-slate-50 transition shadow-sm hover:-translate-y-0.5" data-i18n="btn_b2b">Email & Kolaborasi</a>
         </div>
     </header>
 
-    <section class="py-10 bg-white px-6">
+    <section class="py-10 bg-white/60 px-6 backdrop-blur-sm">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest" data-i18n="sec_cert">Standar & Sertifikasi:</h3>
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest" data-i18n="sec_cert">Standar & Sertifikasi:</h3>
             <div class="flex flex-wrap gap-4 md:gap-8 justify-center items-center opacity-80">
-                <div class="font-bold text-slate-700 flex items-center gap-2">🎖️ <span data-i18n="cert_1">ISO/TS 16949</span></div>
-                <div class="font-bold text-slate-700 flex items-center gap-2">🎖️ <span data-i18n="cert_2">JIS (Standar Jepang)</span></div>
-                <div class="font-bold text-slate-700 flex items-center gap-2">🎖️ <span data-i18n="cert_3">JLPT (Bahasa Jepang)</span></div>
+                <div class="font-bold text-slate-600 flex items-center gap-2">🎖️ <span data-i18n="cert_1">ISO/TS 16949</span></div>
+                <div class="font-bold text-slate-600 flex items-center gap-2">🎖️ <span data-i18n="cert_2">JIS (Standar Jepang)</span></div>
+                <div class="font-bold text-slate-600 flex items-center gap-2">🎖️ <span data-i18n="cert_3">JLPT (Bahasa Jepang)</span></div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20 bg-slate-50 border-t border-slate-200 px-6">
+    <section id="projects" class="py-24 bg-white border-t border-slate-200/60 px-6">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold mb-4 text-slate-900" data-i18n="sec_projects">Sistem & Aplikasi Global</h3>
-            <p class="text-slate-500 mb-12 max-w-2xl" data-i18n="proj_desc">Kumpulan solusi rekayasa dan perangkat lunak nyata yang saya arsiteki untuk menjawab tantangan industri dan kebutuhan komunitas.</p>
+            <div class="flex flex-col mb-16">
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4" data-i18n="sec_projects">Sistem & Aplikasi Global</h3>
+                <p class="text-lg text-slate-500 max-w-2xl font-light" data-i18n="proj_desc">Kumpulan solusi rekayasa dan perangkat lunak nyata yang saya arsiteki untuk menjawab tantangan industri dan kebutuhan komunitas.</p>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-40 bg-blue-600 flex items-center justify-center text-5xl">📊</div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2" data-i18n="tag_ind">Manufaktur & Industri</span>
-                        <h4 class="text-xl font-bold text-slate-800 mb-3" data-i18n="proj_1_title">Q-PORTAL (Quality Control)</h4>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed" data-i18n="proj_1_desc">Sistem Manajemen Kualitas (QMS) komprehensif untuk manufaktur, dilengkapi fitur integrasi QR Code Scanner, otomatisasi ekspor A3 Report, dan TV Signage Mode untuk pemantauan lantai produksi.</p>
-                        <a href="#" target="_blank" class="text-blue-600 text-sm font-semibold hover:underline" data-i18n="btn_detail">Detail Sistem →</a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-500 group flex flex-col">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Technology Circuit" class="object-cover w-full h-full group-hover:scale-110 transition duration-700 ease-in-out">
+                        <div class="absolute inset-0 bg-blue-900/20 group-hover:bg-blue-900/10 transition duration-500"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-3" data-i18n="tag_ind">Manufaktur & Industri</span>
+                        <h4 class="text-xl font-extrabold text-slate-800 mb-3" data-i18n="proj_1_title">Q-PORTAL (Quality Control)</h4>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed font-light flex-1" data-i18n="proj_1_desc">Sistem Manajemen Kualitas (QMS) komprehensif untuk manufaktur, dilengkapi integrasi QR Code Scanner, otomatisasi A3 Report, dan TV Signage Mode.</p>
+                        <a href="#" target="_blank" class="text-blue-700 text-sm font-bold hover:text-blue-500 transition flex items-center gap-1" data-i18n="btn_detail">Detail Sistem <span class="text-lg">→</span></a>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-40 bg-emerald-600 flex items-center justify-center text-5xl">🕌</div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block mb-2" data-i18n="tag_com">Sistem Komunitas</span>
-                        <h4 class="text-xl font-bold text-slate-800 mb-3" data-i18n="proj_2_title">Sistem Manajemen Masjid</h4>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed" data-i18n="proj_2_desc">Aplikasi operasional terpadu untuk manajemen kegiatan, optimalisasi efisiensi energi dan kelistrikan, serta inventarisasi fasilitas masjid secara digital.</p>
-                        <a href="#" target="_blank" class="text-emerald-600 text-sm font-semibold hover:underline" data-i18n="btn_detail">Detail Sistem →</a>
+                <div class="bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-500 group flex flex-col">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&q=80&w=800" alt="Islamic Geometric Architecture" class="object-cover w-full h-full group-hover:scale-110 transition duration-700 ease-in-out">
+                        <div class="absolute inset-0 bg-emerald-900/20 group-hover:bg-emerald-900/10 transition duration-500"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest block mb-3" data-i18n="tag_com">Sistem Komunitas</span>
+                        <h4 class="text-xl font-extrabold text-slate-800 mb-3" data-i18n="proj_2_title">Sistem Manajemen Masjid</h4>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed font-light flex-1" data-i18n="proj_2_desc">Aplikasi operasional terpadu untuk manajemen kegiatan, optimalisasi efisiensi energi kelistrikan, serta inventarisasi fasilitas masjid secara digital.</p>
+                        <a href="#" target="_blank" class="text-emerald-700 text-sm font-bold hover:text-emerald-500 transition flex items-center gap-1" data-i18n="btn_detail">Detail Sistem <span class="text-lg">→</span></a>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-40 bg-indigo-600 flex items-center justify-center text-5xl">📚</div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block mb-2" data-i18n="tag_edu">Pendidikan & Literasi</span>
-                        <h4 class="text-xl font-bold text-slate-800 mb-3" data-i18n="proj_3_title">RBM Japan Portal & Ruang Belajar</h4>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed" data-i18n="proj_3_desc">Ekosistem ruang belajar interaktif yang mengintegrasikan RBM Japan Portal khusus siswa untuk memfasilitasi kebutuhan fungsi akademik dan administratif secara terpusat.</p>
-                        <a href="#" target="_blank" class="text-indigo-600 text-sm font-semibold hover:underline" data-i18n="btn_detail">Detail Sistem →</a>
+                <div class="bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-500 group flex flex-col">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800" alt="Mount Fuji and Sakura Landscape" class="object-cover w-full h-full group-hover:scale-110 transition duration-700 ease-in-out">
+                        <div class="absolute inset-0 bg-indigo-900/20 group-hover:bg-indigo-900/10 transition duration-500"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest block mb-3" data-i18n="tag_edu">Pendidikan & Literasi</span>
+                        <h4 class="text-xl font-extrabold text-slate-800 mb-3" data-i18n="proj_3_title">RBM Japan Portal & Ruang Belajar</h4>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed font-light flex-1" data-i18n="proj_3_desc">Ekosistem ruang belajar interaktif yang mengintegrasikan RBM Japan Portal khusus siswa untuk memfasilitasi kebutuhan fungsi akademik dan administratif.</p>
+                        <a href="#" target="_blank" class="text-indigo-700 text-sm font-bold hover:text-indigo-500 transition flex items-center gap-1" data-i18n="btn_detail">Detail Sistem <span class="text-lg">→</span></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="py-20 bg-slate-900 text-white px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
+    <section id="blog" class="py-24 bg-slate-900 text-white px-6">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16">
             
-            <div class="md:w-1/3">
-                <h3 class="text-3xl font-bold mb-4" data-i18n="sec_blog">Ruang Blog & Karya</h3>
-                <p class="text-slate-400 mb-8 leading-relaxed" data-i18n="blog_desc">Kumpulan tulisan, esai, dan dokumentasi pemikiran saya mengenai perpaduan antara teknik kelistrikan, ekonomi syariah, dan efisiensi operasional.</p>
-                <a href="#" class="inline-block border border-slate-600 text-slate-300 px-6 py-3 rounded-lg hover:bg-slate-800 hover:text-white transition font-medium text-sm" data-i18n="btn_all_posts">Lihat Semua Tulisan</a>
+            <div class="lg:w-1/3">
+                <h3 class="text-3xl md:text-4xl font-extrabold mb-6 text-white" data-i18n="sec_blog">Ruang Tulis & Karya</h3>
+                <p class="text-slate-400 mb-10 leading-relaxed font-light text-lg" data-i18n="blog_desc">Dokumentasi pemikiran saya mengenai perpaduan antara teknik kelistrikan, manajemen kualitas, dan efisiensi operasional.</p>
+                <div class="w-20 h-1 bg-blue-500 mb-10 rounded-full"></div>
             </div>
             
-            <div class="md:w-2/3 space-y-6" id="blog-container">
-                <p class="text-slate-500 italic animate-pulse" data-i18n="txt_loading">Memuat artikel terbaru dari server...</p>
+            <div class="lg:w-2/3 space-y-6" id="blog-container">
+                <div class="p-10 border border-slate-700 rounded-2xl flex items-center justify-center">
+                    <p class="text-slate-400 font-medium animate-pulse flex items-center gap-3">
+                        <svg class="animate-spin h-5 w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <span data-i18n="txt_loading">Menyinkronkan data dari Google Sheets...</span>
+                    </p>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <section class="py-20 bg-white px-6 border-b border-slate-200">
+    <section class="py-24 bg-slate-50 px-6 border-b border-slate-200/60">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold mb-4 text-slate-900 text-center" data-i18n="sec_meth">Metodologi & Kerangka Kerja Engineering</h3>
-            <p class="text-slate-500 mb-14 max-w-2xl mx-auto text-center" data-i18n="meth_desc">Pendekatan sistematis 4 langkah yang saya terapkan dalam menyelesaikan krisis produksi dan mengoptimalkan efisiensi.</p>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-4 text-slate-900 text-center tracking-tight" data-i18n="sec_meth">Kerangka Kerja Engineering</h3>
+            <p class="text-lg text-slate-500 mb-16 max-w-2xl mx-auto text-center font-light" data-i18n="meth_desc">Pendekatan sistematis 4 langkah yang saya terapkan dalam menyelesaikan masalah produksi dan mengoptimalkan efisiensi.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-                <div class="hidden md:block absolute top-10 left-10 right-10 h-0.5 bg-blue-100 z-0"></div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <div class="hidden md:block absolute top-10 left-[12%] right-[12%] h-0.5 bg-slate-200 z-0"></div>
 
-                <div class="relative z-10 flex flex-col items-center text-center">
-                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-4 border-4 border-white shadow-md">1</div>
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-20 h-20 bg-white text-slate-800 rounded-full flex items-center justify-center text-2xl font-black mb-6 border border-slate-200 shadow-sm group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition duration-300">1</div>
                     <h4 class="text-lg font-bold text-slate-800 mb-2" data-i18n="meth_1_title">Investigasi</h4>
-                    <p class="text-sm text-slate-500" data-i18n="meth_1_desc">Root Cause Analysis untuk anomali produk.</p>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed" data-i18n="meth_1_desc">Root Cause Analysis menyeluruh untuk mendeteksi anomali produk dan mesin.</p>
                 </div>
-                <div class="relative z-10 flex flex-col items-center text-center">
-                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-4 border-4 border-white shadow-md">2</div>
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-20 h-20 bg-white text-slate-800 rounded-full flex items-center justify-center text-2xl font-black mb-6 border border-slate-200 shadow-sm group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition duration-300">2</div>
                     <h4 class="text-lg font-bold text-slate-800 mb-2" data-i18n="meth_2_title">Perancangan</h4>
-                    <p class="text-sm text-slate-500" data-i18n="meth_2_desc">Mendesain ulang sistem atau alur kerja.</p>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed" data-i18n="meth_2_desc">Mendesain ulang arsitektur sistem atau alur kerja untuk efisiensi maksimal.</p>
                 </div>
-                <div class="relative z-10 flex flex-col items-center text-center">
-                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-4 border-4 border-white shadow-md">3</div>
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-20 h-20 bg-white text-slate-800 rounded-full flex items-center justify-center text-2xl font-black mb-6 border border-slate-200 shadow-sm group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition duration-300">3</div>
                     <h4 class="text-lg font-bold text-slate-800 mb-2" data-i18n="meth_3_title">Eksekusi</h4>
-                    <p class="text-sm text-slate-500" data-i18n="meth_3_desc">Implementasi Kaizen dan solusi teknis.</p>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed" data-i18n="meth_3_desc">Implementasi program Kaizen dan penerapan solusi teknis kelistrikan.</p>
                 </div>
-                <div class="relative z-10 flex flex-col items-center text-center">
-                    <div class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mb-4 border-4 border-white shadow-md">4</div>
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-20 h-20 bg-white text-slate-800 rounded-full flex items-center justify-center text-2xl font-black mb-6 border border-slate-200 shadow-sm group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition duration-300">4</div>
                     <h4 class="text-lg font-bold text-slate-800 mb-2" data-i18n="meth_4_title">Pemantauan</h4>
-                    <p class="text-sm text-slate-500" data-i18n="meth_4_desc">Kontrol kualitas ketat berstandar JIS.</p>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed" data-i18n="meth_4_desc">Kontrol kualitas ketat berstandar JIS untuk memastikan keberlanjutan.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-20 px-6 bg-slate-50 max-w-full">
+    <section id="experience" class="py-24 px-6 bg-white max-w-full">
         <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl font-bold text-slate-900 mb-12 text-center" data-i18n="sec_exp">Sorotan Karir Profesional</h3>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-16 text-center tracking-tight" data-i18n="sec_exp">Sorotan Karir Profesional</h3>
             
-            <div class="relative border-l-4 border-blue-200 pl-8 space-y-12 ml-4 md:ml-0">
+            <div class="relative border-l-2 border-slate-200 pl-8 space-y-14 ml-4 md:ml-0">
                 <div class="relative">
-                    <div class="absolute -left-[42px] top-1 h-6 w-6 rounded-full bg-blue-600 border-4 border-white shadow"></div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                        <span class="text-sm font-bold text-blue-600 block mb-1" data-i18n="date_1">Agu 2024 - Sekarang | Yokohama, Jepang</span>
-                        <h4 class="text-2xl font-bold text-slate-800" data-i18n="job1_title">Production Engineer & Quality Control</h4>
-                        <p class="text-slate-500 mb-4 font-medium" data-i18n="comp_1">Tokyo Seimitsu Hatsujo</p>
-                        <ul class="list-disc list-inside text-slate-600 space-y-2 text-sm">
-                            <li data-i18n="job1_p1">Melakukan inspeksi kualitas komponen presisi sesuai standar JIS.</li>
-                            <li data-i18n="job1_p2">Memimpin inisiatif Kaizen untuk menekan tingkat kecacatan produk.</li>
+                    <div class="absolute -left-[41px] top-1 h-5 w-5 rounded-full bg-blue-600 border-4 border-white shadow-sm"></div>
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <span class="text-xs font-bold text-blue-600 tracking-wider uppercase block mb-2" data-i18n="date_1">Agu 2024 - Sekarang | Yokohama, Jepang</span>
+                        <h4 class="text-2xl font-extrabold text-slate-900 mb-1" data-i18n="job1_title">Production Engineer & Quality Control</h4>
+                        <p class="text-slate-500 mb-6 font-medium" data-i18n="comp_1">Tokyo Seimitsu Hatsujo</p>
+                        <ul class="list-none space-y-3 text-sm text-slate-600 font-light">
+                            <li class="flex items-start gap-3"><span class="text-blue-500 font-bold">•</span> <span data-i18n="job1_p1">Melakukan inspeksi kualitas komponen presisi sesuai standar JIS.</span></li>
+                            <li class="flex items-start gap-3"><span class="text-blue-500 font-bold">•</span> <span data-i18n="job1_p2">Memimpin inisiatif Kaizen untuk menekan tingkat kecacatan produk.</span></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="relative">
-                    <div class="absolute -left-[42px] top-1 h-6 w-6 rounded-full bg-slate-400 border-4 border-white shadow"></div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                        <span class="text-sm font-bold text-slate-500 block mb-1" data-i18n="date_2">Agu 2018 - Mei 2024 | Jepang</span>
-                        <h4 class="text-2xl font-bold text-slate-800" data-i18n="job2_title">Electrical Engineer</h4>
-                        <p class="text-slate-500 mb-4 font-medium" data-i18n="comp_2">Shinko Seisakusho</p>
-                        <ul class="list-disc list-inside text-slate-600 space-y-2 text-sm">
-                            <li data-i18n="job2_p1">Merancang dan mengimplementasikan proyek Panel Listrik untuk Kapal Kargo.</li>
-                            <li data-i18n="job2_p2">Meningkatkan efisiensi operasional melalui pengujian perangkat elektronik.</li>
+                    <div class="absolute -left-[41px] top-1 h-5 w-5 rounded-full bg-slate-300 border-4 border-white shadow-sm"></div>
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <span class="text-xs font-bold text-slate-500 tracking-wider uppercase block mb-2" data-i18n="date_2">Agu 2018 - Mei 2024 | Jepang</span>
+                        <h4 class="text-2xl font-extrabold text-slate-900 mb-1" data-i18n="job2_title">Electrical Engineer</h4>
+                        <p class="text-slate-500 mb-6 font-medium" data-i18n="comp_2">Shinko Seisakusho</p>
+                        <ul class="list-none space-y-3 text-sm text-slate-600 font-light">
+                            <li class="flex items-start gap-3"><span class="text-slate-400 font-bold">•</span> <span data-i18n="job2_p1">Merancang dan mengimplementasikan proyek Panel Listrik untuk Kapal Kargo.</span></li>
+                            <li class="flex items-start gap-3"><span class="text-slate-400 font-bold">•</span> <span data-i18n="job2_p2">Meningkatkan efisiensi operasional melalui pengujian perangkat elektronik.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -180,102 +199,100 @@
         </div>
     </section>
 
-    <section class="py-16 bg-blue-50 border-t border-blue-100 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section class="py-24 bg-slate-50 border-t border-slate-200/60 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-                <h3 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-blue-600 pl-4" data-i18n="sec_edu">Latar Belakang Pendidikan</h3>
-                <div class="space-y-4">
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg" data-i18n="badge_ongoing">Sedang Berjalan</div>
-                        <h4 class="font-bold text-slate-800 text-lg" data-i18n="edu_s2_title">S2 Ekonomi Syariah</h4>
-                        <p class="text-sm text-slate-500 mt-1" data-i18n="edu_s2_desc">Fokus pada prinsip keuangan dan operasional bisnis Islam.</p>
+                <h3 class="text-2xl font-extrabold text-slate-900 mb-8 border-l-4 border-blue-600 pl-5 tracking-tight" data-i18n="sec_edu">Latar Belakang Pendidikan</h3>
+                <div class="space-y-5">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl uppercase tracking-wider" data-i18n="badge_ongoing">Sedang Berjalan</div>
+                        <h4 class="font-bold text-slate-900 text-lg" data-i18n="edu_s2_title">S2 Ekonomi Syariah</h4>
+                        <p class="text-sm text-slate-500 mt-2 font-light" data-i18n="edu_s2_desc">Fokus pada prinsip keuangan dan operasional bisnis Islam.</p>
                     </div>
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-slate-800 text-lg" data-i18n="edu_s1_arab_title">S1 Pendidikan Bahasa Arab</h4>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 text-lg" data-i18n="edu_s1_arab_title">S1 Pendidikan Bahasa Arab</h4>
                     </div>
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-slate-800 text-lg" data-i18n="edu_jp_title">Bunkyo University</h4>
-                        <p class="text-sm text-slate-500 mt-1" data-i18n="edu_jp_desc">Sastra & Bahasa Jepang (2012 - 2013)</p>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 text-lg" data-i18n="edu_jp_title">Bunkyo University</h4>
+                        <p class="text-sm text-slate-500 mt-2 font-light" data-i18n="edu_jp_desc">Sastra & Bahasa Jepang (2012 - 2013)</p>
                     </div>
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-slate-800 text-lg" data-i18n="edu_s1_elektro_title">Unisma Bekasi</h4>
-                        <p class="text-sm text-slate-500 mt-1" data-i18n="edu_s1_elektro_desc">S1 Teknik Elektro dan Elektronika</p>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 text-lg" data-i18n="edu_s1_elektro_title">Unisma Bekasi</h4>
+                        <p class="text-sm text-slate-500 mt-2 font-light" data-i18n="edu_s1_elektro_desc">S1 Teknik Elektro dan Elektronika</p>
                     </div>
                 </div>
             </div>
 
-            <div>
-                <h3 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-blue-600 pl-4" data-i18n="sec_skills">Kompetensi Inti</h3>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-                        <p class="font-bold text-slate-800">⚙️ <span data-i18n="skill_1">Electrical</span></p>
-                        <p class="text-xs text-slate-500 mt-1">Panel Wiring & PLC</p>
+            <div class="flex flex-col">
+                <h3 class="text-2xl font-extrabold text-slate-900 mb-8 border-l-4 border-blue-600 pl-5 tracking-tight" data-i18n="sec_skills">Kompetensi Inti</h3>
+                <div class="grid grid-cols-2 gap-5 mb-12">
+                    <div class="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                        <p class="font-bold text-slate-800 flex items-center gap-2"><span class="text-xl">⚙️</span> <span data-i18n="skill_1">Electrical</span></p>
+                        <p class="text-xs text-slate-500 mt-2 font-light">Panel Wiring & PLC</p>
                     </div>
-                    <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-                        <p class="font-bold text-slate-800">✅ <span data-i18n="skill_2">QA System</span></p>
-                        <p class="text-xs text-slate-500 mt-1">JIS & ISO/TS</p>
+                    <div class="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                        <p class="font-bold text-slate-800 flex items-center gap-2"><span class="text-xl">✅</span> <span data-i18n="skill_2">QA System</span></p>
+                        <p class="text-xs text-slate-500 mt-2 font-light">JIS & ISO/TS 16949</p>
                     </div>
-                    <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-                        <p class="font-bold text-slate-800">📈 <span data-i18n="skill_3">Kaizen</span></p>
-                        <p class="text-xs text-slate-500 mt-1" data-i18n="skill_3_desc">Process Improvement</p>
+                    <div class="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                        <p class="font-bold text-slate-800 flex items-center gap-2"><span class="text-xl">📈</span> <span data-i18n="skill_3">Kaizen</span></p>
+                        <p class="text-xs text-slate-500 mt-2 font-light" data-i18n="skill_3_desc">Peningkatan Proses</p>
                     </div>
-                    <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-                        <p class="font-bold text-slate-800">🌐 <span data-i18n="skill_4">Bilingual +</span></p>
-                        <p class="text-xs text-slate-500 mt-1">JP, EN, ID</p>
+                    <div class="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                        <p class="font-bold text-slate-800 flex items-center gap-2"><span class="text-xl">🌐</span> <span data-i18n="skill_4">Bilingual +</span></p>
+                        <p class="text-xs text-slate-500 mt-2 font-light">JP, EN, ID</p>
                     </div>
                 </div>
 
-                <div class="mt-8 bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center">
-                    <h3 class="text-xl font-bold mb-3 text-slate-900" data-i18n="sec_contact">Mari Terhubung</h3>
-                    <p class="text-slate-500 text-sm mb-6" data-i18n="contact_desc">Terbuka untuk diskusi proyek atau kolaborasi sistem.</p>
-                    <a href="mailto:wahyusetiawan1402@gmail.com" class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold transition">Email Saya</a>
+                <div class="mt-auto bg-slate-900 p-10 rounded-3xl text-center shadow-lg relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl"></div>
+                    <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-emerald-600/20 rounded-full blur-3xl"></div>
+                    
+                    <h3 class="text-2xl font-extrabold mb-3 text-white relative z-10" data-i18n="sec_contact">Mari Terhubung</h3>
+                    <p class="text-slate-400 text-sm mb-8 font-light leading-relaxed relative z-10" data-i18n="contact_desc">Terbuka untuk diskusi proyek teknik, manajemen kualitas, atau kolaborasi pengembangan sistem terpadu.</p>
+                    <a href="mailto:wahyusetiawan1402@gmail.com" class="inline-block w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl font-bold tracking-wide transition relative z-10 shadow-lg hover:shadow-blue-500/30">Kirim Email</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-500 text-center py-6 text-sm">
-        <p>&copy; 2026 Wahyu Setiawan. <span data-i18n="footer_text">Didesain untuk kualitas dan dampak.</span></p>
+    <footer class="bg-white text-slate-400 text-center py-8 border-t border-slate-100 text-sm font-light">
+        <p>&copy; 2026 Wahyu Setiawan. <span data-i18n="footer_text">Didesain dengan presisi dan profesionalisme.</span></p>
     </footer>
 
     <script>
-        // 1. DICTIONARY BAHASA
+        // --- 1. KAMUS BAHASA ---
         const translations = {
             en: {
-                nav_projects: "Projects",
-                nav_blog: "Blog",
+                nav_projects: "Projects", nav_blog: "Writings",
                 hero_loc: "Based in Yokohama, Japan",
                 hero_role: "Production & Electrical Engineer | Quality Management",
                 hero_desc: "Applying engineering expertise to practical issues, from manufacturing floors to digital community solutions. Skilled in designing precise operational systems supported by global compliance.",
-                btn_work: "View Systems & Works",
-                btn_b2b: "Email & Collaboration",
+                btn_work: "View Systems & Works", btn_b2b: "Email & Collaboration",
                 sec_cert: "Standards & Certifications:",
-                cert_1: "ISO/TS 16949",
-                cert_2: "JIS (Japanese Standards)",
-                cert_3: "JLPT (Japanese Language)",
+                cert_1: "ISO/TS 16949", cert_2: "JIS (Japanese Standards)", cert_3: "JLPT (Japanese Language)",
                 sec_projects: "Global Systems & Applications",
                 proj_desc: "A collection of engineering solutions and applications I have built to address industry challenges and community needs.",
                 tag_ind: "Manufacturing & Industry",
                 proj_1_title: "Q-PORTAL (Quality Control)",
-                proj_1_desc: "A comprehensive Quality Management System (QMS) featuring QR Code Scanner integration, A3 Report export automation, and TV Signage Mode for production floor monitoring.",
-                btn_detail: "System Details →",
+                proj_1_desc: "A comprehensive Quality Management System (QMS) featuring QR Code Scanner integration, A3 Report export automation, and TV Signage Mode.",
+                btn_detail: "System Details",
                 tag_com: "Community System",
                 proj_2_title: "Mosque Management System",
-                proj_2_desc: "An operational application for managing activities, energy/electrical efficiency optimization, and digital inventory of mosque facilities.",
+                proj_2_desc: "An operational application for managing activities, energy/electrical efficiency optimization, and digital inventory of facilities.",
                 tag_edu: "Education & Literacy",
                 proj_3_title: "RBM Japan Portal & Study Room",
-                proj_3_desc: "An interactive study space ecosystem integrating the RBM Japan Portal for students, facilitating academic and administrative functions centrally.",
-                sec_blog: "Blog & Writings",
-                blog_desc: "A collection of my writings, essays, and thoughts on the intersection of electrical engineering, Islamic economics, and operational efficiency.",
-                btn_all_posts: "View All Posts",
-                txt_loading: "Loading latest articles from server...",
-                sec_meth: "Engineering Methodology",
-                meth_desc: "A 4-step approach to resolving production crises.",
-                meth_1_title: "Investigate", meth_1_desc: "Root Cause Analysis for anomalies.",
-                meth_2_title: "Design", meth_2_desc: "Redesigning systems and workflows.",
-                meth_3_title: "Execute", meth_3_desc: "Implementing technical solutions.",
-                meth_4_title: "Monitor", meth_4_desc: "Strict quality control (JIS).",
-                sec_exp: "Career Highlights",
+                proj_3_desc: "An interactive study space ecosystem integrating the RBM Japan Portal for students, facilitating academic and administrative functions.",
+                sec_blog: "Writings & Insights",
+                blog_desc: "Documentation of my thoughts on the intersection of electrical engineering, quality management, and operational efficiency.",
+                txt_loading: "Syncing data from Google Sheets...",
+                sec_meth: "Engineering Framework",
+                meth_desc: "A systematic 4-step approach I apply to resolve production crises and optimize efficiency.",
+                meth_1_title: "Investigate", meth_1_desc: "Comprehensive Root Cause Analysis to detect product and machine anomalies.",
+                meth_2_title: "Design", meth_2_desc: "Redesigning system architecture or workflows for maximum efficiency.",
+                meth_3_title: "Execute", meth_3_desc: "Implementation of Kaizen programs and electrical technical solutions.",
+                meth_4_title: "Monitor", meth_4_desc: "Strict JIS standard quality control to ensure long-term sustainability.",
+                sec_exp: "Professional Career Highlights",
                 date_1: "Aug 2024 - Present | Yokohama, Japan",
                 job1_title: "Production Engineer & Quality Control",
                 comp_1: "Tokyo Seimitsu Hatsujo",
@@ -296,48 +313,42 @@
                 edu_s1_elektro_title: "Unisma Bekasi",
                 edu_s1_elektro_desc: "Bachelor's Degree in Electrical Engineering",
                 sec_skills: "Core Competencies",
-                skill_1: "Electrical",
-                skill_2: "QA System",
+                skill_1: "Electrical", skill_2: "QA System",
                 skill_3: "Kaizen", skill_3_desc: "Process Improvement",
                 skill_4: "Bilingual +",
                 sec_contact: "Let's Connect",
-                contact_desc: "Open to discussing projects or system collaborations.",
-                footer_text: "Designed for quality and impact."
+                contact_desc: "Open to discussing engineering projects, quality management, or integrated system collaborations.",
+                footer_text: "Designed with precision and professionalism."
             },
             id: {
-                nav_projects: "Karya Sistem",
-                nav_blog: "Blog",
+                nav_projects: "Karya Sistem", nav_blog: "Ruang Tulis",
                 hero_loc: "Berbasis di Yokohama, Jepang",
                 hero_role: "Production & Electrical Engineer | Quality Management",
-                hero_desc: "Berhasil menerapkan keahlian teknik pada berbagai masalah praktis, mulai dari lantai pabrik manufaktur hingga solusi komunitas digital. Mahir merancang sistem operasional yang presisi, didukung oleh wawasan makro-ekonomi dan kepatuhan industri global.",
-                btn_work: "Lihat Sistem & Karya",
-                btn_b2b: "Email & Kolaborasi",
+                hero_desc: "Berhasil menerapkan keahlian teknik pada berbagai masalah praktis, mulai dari lantai pabrik manufaktur hingga solusi komunitas digital. Mahir merancang sistem operasional yang presisi, didukung oleh wawasan makro-ekonomi dan kepatuhan industri.",
+                btn_work: "Lihat Sistem & Karya", btn_b2b: "Email & Kolaborasi",
                 sec_cert: "Standar & Sertifikasi:",
-                cert_1: "ISO/TS 16949",
-                cert_2: "JIS (Standar Jepang)",
-                cert_3: "JLPT (Bahasa Jepang)",
+                cert_1: "ISO/TS 16949", cert_2: "JIS (Standar Jepang)", cert_3: "JLPT (Bahasa Jepang)",
                 sec_projects: "Sistem & Aplikasi Global",
                 proj_desc: "Kumpulan solusi rekayasa dan perangkat lunak nyata yang saya arsiteki untuk menjawab tantangan industri dan kebutuhan komunitas.",
                 tag_ind: "Manufaktur & Industri",
                 proj_1_title: "Q-PORTAL (Quality Control)",
-                proj_1_desc: "Sistem Manajemen Kualitas (QMS) komprehensif untuk manufaktur, dilengkapi fitur integrasi QR Code Scanner, otomatisasi ekspor A3 Report, dan TV Signage Mode untuk pemantauan lantai produksi.",
-                btn_detail: "Detail Sistem →",
+                proj_1_desc: "Sistem Manajemen Kualitas (QMS) komprehensif untuk manufaktur, dilengkapi integrasi QR Code Scanner, otomatisasi A3 Report, dan TV Signage Mode.",
+                btn_detail: "Detail Sistem",
                 tag_com: "Sistem Komunitas",
                 proj_2_title: "Sistem Manajemen Masjid",
-                proj_2_desc: "Aplikasi operasional terpadu untuk manajemen kegiatan, optimalisasi efisiensi energi dan kelistrikan, serta inventarisasi fasilitas masjid secara digital.",
+                proj_2_desc: "Aplikasi operasional terpadu untuk manajemen kegiatan, optimalisasi efisiensi energi kelistrikan, serta inventarisasi fasilitas masjid secara digital.",
                 tag_edu: "Pendidikan & Literasi",
                 proj_3_title: "RBM Japan Portal & Ruang Belajar",
-                proj_3_desc: "Ekosistem ruang belajar interaktif yang mengintegrasikan RBM Japan Portal khusus siswa untuk memfasilitasi kebutuhan fungsi akademik dan administratif secara terpusat.",
-                sec_blog: "Ruang Blog & Karya",
-                blog_desc: "Kumpulan tulisan, esai, dan dokumentasi pemikiran saya mengenai perpaduan antara teknik kelistrikan, ekonomi syariah, dan efisiensi operasional.",
-                btn_all_posts: "Lihat Semua Tulisan",
-                txt_loading: "Memuat artikel terbaru dari server...",
-                sec_meth: "Metodologi & Kerangka Kerja Engineering",
-                meth_desc: "Pendekatan sistematis 4 langkah yang saya terapkan dalam menyelesaikan krisis produksi dan mengoptimalkan efisiensi.",
-                meth_1_title: "Investigasi", meth_1_desc: "Root Cause Analysis untuk anomali produk.",
-                meth_2_title: "Perancangan", meth_2_desc: "Mendesain ulang sistem atau alur kerja.",
-                meth_3_title: "Eksekusi", meth_3_desc: "Implementasi Kaizen dan solusi teknis.",
-                meth_4_title: "Pemantauan", meth_4_desc: "Kontrol kualitas ketat berstandar JIS.",
+                proj_3_desc: "Ekosistem ruang belajar interaktif yang mengintegrasikan RBM Japan Portal khusus siswa untuk memfasilitasi kebutuhan fungsi akademik dan administratif.",
+                sec_blog: "Ruang Tulis & Karya",
+                blog_desc: "Dokumentasi pemikiran saya mengenai perpaduan antara teknik kelistrikan, manajemen kualitas, dan efisiensi operasional.",
+                txt_loading: "Menyinkronkan data dari Google Sheets...",
+                sec_meth: "Kerangka Kerja Engineering",
+                meth_desc: "Pendekatan sistematis 4 langkah yang saya terapkan dalam menyelesaikan masalah produksi dan mengoptimalkan efisiensi.",
+                meth_1_title: "Investigasi", meth_1_desc: "Root Cause Analysis menyeluruh untuk mendeteksi anomali produk dan mesin.",
+                meth_2_title: "Perancangan", meth_2_desc: "Mendesain ulang arsitektur sistem atau alur kerja untuk efisiensi maksimal.",
+                meth_3_title: "Eksekusi", meth_3_desc: "Implementasi program Kaizen dan penerapan solusi teknis kelistrikan.",
+                meth_4_title: "Pemantauan", meth_4_desc: "Kontrol kualitas ketat berstandar JIS untuk memastikan keberlanjutan.",
                 sec_exp: "Sorotan Karir Profesional",
                 date_1: "Agu 2024 - Sekarang | Yokohama, Jepang",
                 job1_title: "Production Engineer & Quality Control",
@@ -359,48 +370,42 @@
                 edu_s1_elektro_title: "Unisma Bekasi",
                 edu_s1_elektro_desc: "S1 Teknik Elektro dan Elektronika",
                 sec_skills: "Kompetensi Inti",
-                skill_1: "Electrical",
-                skill_2: "QA System",
+                skill_1: "Electrical", skill_2: "QA System",
                 skill_3: "Kaizen", skill_3_desc: "Peningkatan Proses",
                 skill_4: "Bilingual +",
                 sec_contact: "Mari Terhubung",
-                contact_desc: "Terbuka untuk diskusi proyek atau kolaborasi sistem.",
-                footer_text: "Didesain untuk kualitas dan dampak."
+                contact_desc: "Terbuka untuk diskusi proyek teknik, manajemen kualitas, atau kolaborasi pengembangan sistem terpadu.",
+                footer_text: "Didesain dengan presisi dan profesionalisme."
             },
             ja: {
-                nav_projects: "プロジェクト",
-                nav_blog: "ブログ",
+                nav_projects: "プロジェクト", nav_blog: "執筆・記事",
                 hero_loc: "神奈川県横浜市在住",
                 hero_role: "生産・電気エンジニア | 品質管理",
                 hero_desc: "製造現場からデジタルコミュニティのソリューションまで、実践的な問題にエンジニアリングの専門知識を応用。グローバルなコンプライアンスに裏付けられた、正確な運用システムの設計に熟練。",
-                btn_work: "システムと実績を見る",
-                btn_b2b: "メール・コラボレーション",
+                btn_work: "システムと実績を見る", btn_b2b: "メール・コラボレーション",
                 sec_cert: "規格と認証:",
-                cert_1: "ISO/TS 16949",
-                cert_2: "JIS（日本産業規格）",
-                cert_3: "JLPT（日本語能力試験）",
+                cert_1: "ISO/TS 16949", cert_2: "JIS（日本産業規格）", cert_3: "JLPT（日本語能力試験）",
                 sec_projects: "グローバルシステムとアプリケーション",
                 proj_desc: "業界の課題やコミュニティのニーズに対応するために構築したエンジニアリングソリューションとアプリケーションのコレクション。",
                 tag_ind: "製造と産業",
                 proj_1_title: "Q-PORTAL（品質管理）",
-                proj_1_desc: "QRコードスキャナー統合、A3レポートエクスポートの自動化、生産フロア監視用のTVサイネージモードを備えた包括的な品質管理システム（QMS）。",
-                btn_detail: "システム詳細 →",
+                proj_1_desc: "QRコードスキャナー統合、A3レポートの自動化、生産フロア監視用のTVサイネージモードを備えた包括的な品質管理システム（QMS）。",
+                btn_detail: "システム詳細",
                 tag_com: "コミュニティシステム",
                 proj_2_title: "モスク管理システム",
-                proj_2_desc: "活動の管理、エネルギー/電気効率の最適化、モスク施設のデジタル在庫管理のための運用アプリケーション。",
+                proj_2_desc: "活動の管理、エネルギー/電気効率の最適化、施設のデジタル在庫管理のための運用アプリケーション。",
                 tag_edu: "教育とリテラシー",
                 proj_3_title: "RBM Japanポータルと学習室",
-                proj_3_desc: "学術的および管理的な機能を一元的に促進する、学生向けのRBM Japanポータルを統合したインタラクティブな学習スペースのエコシステム。",
-                sec_blog: "ブログと執筆",
-                blog_desc: "電気工学、イスラム経済学、運用効率の交差点に関する私の文章、エッセイ、考えのコレクション。",
-                btn_all_posts: "すべての記事を見る",
-                txt_loading: "サーバーから最新の記事を読み込んでいます...",
-                sec_meth: "方法論とフレームワーク",
-                meth_desc: "生産の危機を解決するための体系的な4段階のアプローチ。",
-                meth_1_title: "調査", meth_1_desc: "根本原因分析。",
-                meth_2_title: "設計", meth_2_desc: "システムの再設計。",
-                meth_3_title: "実行", meth_3_desc: "技術的解決策の実施。",
-                meth_4_title: "監視", meth_4_desc: "JISに準拠した厳格な品質管理。",
+                proj_3_desc: "学術的および管理的な機能を促進する、学生向けのRBM Japanポータルを統合したインタラクティブな学習スペースのエコシステム。",
+                sec_blog: "執筆と洞察",
+                blog_desc: "電気工学、品質管理、および運用効率の交差点に関する私の考えの文書化。",
+                txt_loading: "Googleスプレッドシートからデータを同期しています...",
+                sec_meth: "エンジニアリングフレームワーク",
+                meth_desc: "生産の危機を解決し、効率を最適化するために適用する体系的な4段階のアプローチ。",
+                meth_1_title: "調査", meth_1_desc: "製品や機械の異常を検出するための徹底的な根本原因分析。",
+                meth_2_title: "設計", meth_2_desc: "最大の効率を得るためのシステムアーキテクチャやワークフローの再設計。",
+                meth_3_title: "実行", meth_3_desc: "Kaizenプログラムの実施および電気技術ソリューションの適用。",
+                meth_4_title: "監視", meth_4_desc: "長期的な持続可能性を確保するためのJIS規格に基づく厳格な品質管理。",
                 sec_exp: "主な職歴",
                 date_1: "2024年8月 - 現在 | 横浜、日本",
                 job1_title: "生産エンジニア、品質管理",
@@ -422,13 +427,12 @@
                 edu_s1_elektro_title: "ウニスマ・ブカシ",
                 edu_s1_elektro_desc: "電気電子工学 学士",
                 sec_skills: "コアコンピテンシー",
-                skill_1: "電気工学",
-                skill_2: "品質システム",
+                skill_1: "電気工学", skill_2: "品質システム",
                 skill_3: "Kaizen", skill_3_desc: "プロセス改善",
                 skill_4: "バイリンガル +",
                 sec_contact: "連絡先",
-                contact_desc: "プロジェクトやシステムのコラボレーションについてのご相談をお待ちしております。",
-                footer_text: "品質と影響のために設計されています。"
+                contact_desc: "エンジニアリングプロジェクト、品質管理、または統合システムのコラボレーションについてのご相談をお待ちしております。",
+                footer_text: "精度とプロフェッショナリズムをもって設計されています。"
             }
         };
 
@@ -442,52 +446,59 @@
             document.documentElement.lang = lang;
         }
         
-        // Inisialisasi Bahasa
         changeLanguage('id');
         document.getElementById('langSwitch').value = 'id';
 
 
-        // 2. SISTEM BLOG DARI GOOGLE SHEETS
-        // GANTI TULISAN DI BAWAH INI DENGAN LINK "PUBLISH TO WEB (CSV)" GOOGLE SHEETS ANDA
-        const googleSheetCSV = 'MASUKKAN_LINK_PUBLISH_TO_WEB_CSV_ANDA_DISINI';
+        // --- 2. SISTEM BLOG DARI GOOGLE SHEETS (CSV) ---
+        // Link CSV Asli Anda
+        const googleSheetCSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSMEhPgvSEuWjEBkqbWIU9GlyLJufK1KKVumSxn6-UgwJ2Z6zWCnDu9p9LJ3n6zZx8G-0YJ0FvmBTpE/pub?gid=0&single=true&output=csv';
+
+        // Fungsi Parser CSV sederhana untuk memisahkan data dengan koma, dengan penanganan dasar kutipan
+        function parseCSV(str) {
+            const result = [];
+            let i = 0;
+            // Memisahkan baris
+            const rows = str.split('\\n');
+            for (let row of rows) {
+                if(row.trim() === '') continue;
+                // Regex memisahkan nilai berdasarkan koma, mengabaikan koma di dalam tanda kutip
+                const rowData = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(item => {
+                    let val = item.trim();
+                    if (val.startsWith('"') && val.endsWith('"')) {
+                        val = val.substring(1, val.length - 1); // Buang tanda kutip
+                    }
+                    return val;
+                });
+                result.push(rowData);
+            }
+            return result;
+        }
 
         async function fetchBlogPosts() {
             const container = document.getElementById('blog-container');
-            
-            // Mode Placeholder jika Link Google Sheets belum diisi
-            if (googleSheetCSV === 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSMEhPgvSEuWjEBkqbWIU9GlyLJufK1KKVumSxn6-UgwJ2Z6zWCnDu9p9LJ3n6zZx8G-0YJ0FvmBTpE/pub?gid=0&single=true&output=csv') {
-                container.innerHTML = `
-                    <a href="#" class="block bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-blue-500 hover:bg-slate-800 transition group">
-                        <span class="text-blue-400 text-xs font-bold tracking-widest uppercase mb-2 block">SISTEM SIAP DIGUNAKAN</span>
-                        <h4 class="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition">Menunggu Koneksi Google Sheets</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Sistem Headless CMS telah aktif. Masukkan link CSV Google Sheets Anda pada kode HTML untuk memunculkan artikel secara otomatis.</p>
-                    </a>
-                `;
-                return;
-            }
 
             try {
                 const response = await fetch(googleSheetCSV);
                 const data = await response.text();
                 
-                // Memisahkan baris data
-                const rows = data.split('\\n').slice(1); // Mulai dari baris ke-2 (mengabaikan Header)
+                const parsedData = parseCSV(data);
+                const rows = parsedData.slice(1); // Mulai dari baris ke-2 (mengabaikan Header)
                 let htmlContent = '';
 
-                rows.forEach(row => {
-                    // Pemisahan koma sederhana (Pastikan tidak ada tanda koma di dalam teks judul/deskripsi di spreadsheet Anda)
-                    const cols = row.split(','); 
-                    if (cols.length >= 4) {
-                        const kategori = cols[0].trim();
-                        const judul = cols[1].trim();
-                        const deskripsi = cols[2].trim();
-                        const link = cols[3].trim();
+                rows.forEach(cols => {
+                    // Cek jika jumlah kolom sesuai yang diharapkan (minimal 4: Kategori, Judul, Deskripsi, Link)
+                    if (cols.length >= 4 && cols[1] !== "") {
+                        const kategori = cols[0] || 'UMUM';
+                        const judul = cols[1];
+                        const deskripsi = cols[2] || '';
+                        const link = cols[3] || '#';
 
                         htmlContent += `
-                            <a href="${link}" target="_blank" class="block bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-emerald-500 hover:bg-slate-800 transition group">
-                                <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-2 block">${kategori}</span>
-                                <h4 class="text-xl font-bold mb-2 text-white group-hover:text-emerald-400 transition">${judul}</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed">${deskripsi}</p>
+                            <a href="${link}" target="_blank" class="block bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 hover:bg-slate-800/80 transition duration-300 group shadow-sm">
+                                <span class="text-blue-400 text-xs font-bold tracking-widest uppercase mb-3 block">${kategori}</span>
+                                <h4 class="text-xl font-extrabold mb-3 text-white group-hover:text-blue-400 transition leading-snug">${judul}</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed font-light">${deskripsi}</p>
                             </a>
                         `;
                     }
@@ -496,16 +507,21 @@
                 if (htmlContent !== '') {
                     container.innerHTML = htmlContent;
                 } else {
-                    container.innerHTML = '<p class="text-slate-500">Belum ada tulisan.</p>';
+                    container.innerHTML = `
+                        <div class="p-10 border border-slate-700 rounded-2xl text-center">
+                            <p class="text-slate-500 font-light">Belum ada tulisan yang dipublikasikan. Tambahkan data di Google Sheets Anda.</p>
+                        </div>
+                    `;
                 }
 
             } catch (error) {
                 console.error('Error fetching blog data:', error);
-                container.innerHTML = '<p class="text-red-400 text-sm">Gagal terhubung ke database. Pastikan link Google Sheets benar.</p>';
+                container.innerHTML = '<p class="text-red-400 text-sm">Gagal terhubung ke database artikel (Google Sheets). Periksa koneksi atau URL.</p>';
             }
         }
 
-        fetchBlogPosts();
+        // Jalankan fetch saat halaman selesai diload
+        document.addEventListener('DOMContentLoaded', fetchBlogPosts);
     </script>
 </body>
 </html>
